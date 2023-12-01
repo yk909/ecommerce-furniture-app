@@ -44,11 +44,21 @@ const TopFlyMenu = ({
         </button>
       </div>
       <form>
-        <input
-          type="text"
-          className="px-4 h-[46px] text-sm bg-white text-neutral-04 rounded-md border-[1px] border-neutral-04 w-full"
-          placeholder="Search"
-        />
+        <fieldset className="relative">
+          <input
+            type="text"
+            className="px-4 pl-12 h-[46px] text-sm focus:outline-none bg-white text-neutral-04 rounded-md border-[1px] border-neutral-04 w-full"
+            placeholder="Search"
+          />
+          <div className="absolute left-4 inset-y-0 flex items-center">
+            <Image
+              src="/icons/interface/outline/search-02.svg"
+              width={24}
+              height={24}
+              alt="Search icon"
+            />
+          </div>
+        </fieldset>
       </form>
       <div className="flex flex-col gap-y-4">
         {navigation.map((nav) => (
@@ -116,12 +126,12 @@ const BottomFlyMenu = () => {
     <article className="flex flex-col justify-between min-h-[210px]">
       <div className="flex flex-col gap-y-4">
         <div className="text-lg text-neutral-04">
-          <MenuItem name={navigation[0].name} href={navigation[0].href}>
+          <MenuItem name={navigationShop[0].name} href={navigation[0].href}>
             <ShoppingBagCartButton digit={cart} />
           </MenuItem>
         </div>
         <div className="text-lg text-neutral-04">
-          <MenuItem name={navigation[0].name} href={navigation[0].href}>
+          <MenuItem name={navigationShop[1].name} href={navigation[1].href}>
             <HeartButton digit={cart} />
           </MenuItem>
         </div>
@@ -133,12 +143,18 @@ const BottomFlyMenu = () => {
 };
 
 const FlyMenu = ({
+  state,
   onNav,
 }: {
+  state: boolean;
   onNav: React.Dispatch<React.SetStateAction<boolean>>;
 }) => {
+  const style = !state && "translate-x-[-100%]";
+
   return (
-    <aside className="absolute top-0 left-0 right-0 bottom-0 bg-white-01 w-[90%] z-50">
+    <aside
+      className={`transition ease-in-out absolute top-0 left-0 duration-500 ${style} bottom-0 bg-white-01 w-[90%] z-50 `}
+    >
       <section className="flex flex-col justify-between h-full p-6">
         <TopFlyMenu onNav={onNav} />
         <BottomFlyMenu />

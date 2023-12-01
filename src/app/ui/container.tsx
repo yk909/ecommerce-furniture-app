@@ -2,7 +2,7 @@ import tw from "twin.macro";
 
 const formats = {
   notificacionBar: tw`py-2`,
-  navbar: tw`py-4`,
+  navbar: tw`py-4 md:px-40`,
   none: tw``,
 };
 
