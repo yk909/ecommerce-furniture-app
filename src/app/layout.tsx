@@ -1,10 +1,10 @@
 "use client";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import NotificationBar from "./ui/home/NotificationBar";
+import NotificationBar from "./ui/shared/NotificationBar";
 import { GlobalStyles } from "twin.macro";
 import StyledComponentsRegistry from "@/lib/registry";
-import Navigator from "./ui/home/Navigator";
+import Navigator from "./ui/shared/Navigator";
 import {
   NavBarWithContainer,
   NotificationBarWithContainer,
@@ -17,9 +17,13 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const maxContainer: string = "max-w-7xl m-auto";
+  const navigatorStyle: string = `bg-white-01 ${maxContainer}`;
+  const mainStyle: string = `${maxContainer}`;
+
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={inter.className + "bg-blue-01"}>
         <StyledComponentsRegistry>
           <GlobalStyles />
           <aside className="bg-white-02">
@@ -27,12 +31,12 @@ export default function RootLayout({
               <NotificationBar />
             </NotificationBarWithContainer>
           </aside>
-          <nav className="bg-white-01">
+          <nav className={navigatorStyle}>
             <NavBarWithContainer>
               <Navigator />
             </NavBarWithContainer>
           </nav>
-          {children}
+          <main className={mainStyle}>{children}</main>
         </StyledComponentsRegistry>
       </body>
     </html>
