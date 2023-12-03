@@ -5,6 +5,7 @@ import tw from "twin.macro";
 export enum ButtonTextColor {
   blue = "text-blue-01",
   white = "text-white-01",
+  black = "text-black"
 }
 
 export enum ButtonBackgroundColor {
@@ -72,7 +73,7 @@ export const ButtonImage = ({
   children = <></>,
 }: ButtonProps) => {
   const styleOrientation = orientation === "right" && "flex-row-reverse";
-  const style = `flex content-center ${styleOrientation} ${color} ${backgroundColor}`;
+  const style = `flex content-center ${styleOrientation} ${color} ${backgroundColor} items-center `;
 
   return (
     <button className={style} css={styles.border({ border, borderColor })}>

@@ -1,10 +1,6 @@
 import Image from "next/image";
 import React from "react";
-import {
-  ButtonBackgroundColor,
-  ButtonImageRightLineDown,
-  ButtonTextColor,
-} from "../button";
+import { LinkButtonImageRightLineDown } from "./LinkButton";
 
 const NotificationBar = () => {
 
@@ -24,20 +20,22 @@ const NotificationBar = () => {
         30% off storewide — Limited time!
       </p>
       <div className="hidden xl:block">
-        <ButtonImageRightLineDown
+        <LinkButtonImageRightLineDown
           title="Shop Now"
-          backgroundColor={ButtonBackgroundColor.none}
-          color={ButtonTextColor.blue}
-          borderColor="blue"
+          href="#"
+          style={{
+            backgroundColor: "none",
+            textColor: "blue",
+            borderColor: "blue"
+          }}
         >
           <Image
             alt="Icon arrow right"
             src="/icons/arrow/arrow-right-blue.svg"
             width={18}
             height={18}
-            className="ml-1 inline-block stroke-[#377DFF]"
           />
-        </ButtonImageRightLineDown>
+        </LinkButtonImageRightLineDown>
       </div>
       <button className="xl:absolute right-0" onClick={onShowNotificacionBar}>
         <Image

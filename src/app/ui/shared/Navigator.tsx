@@ -73,13 +73,6 @@ const MapNavItem = () =>
 const Navigator = () => {
   const [car] = useState(0);
   const [openNav, setOpenNav] = useState(false);
-  // const [hamburger, setHamburger] = useState(true);
-  // useEffect(() => {
-  //   console.log(window.innerWidth)
-  //   window.addEventListener("resize", () =>
-  //     window.innerWidth >= 768 ? setHamburger(false) : setHamburger(true)
-  //   );
-  // }, []);
 
   return (
     <>

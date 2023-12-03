@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import { NavigationProps, navigation } from "./Navigator";
 import { ButtonSolidBlack } from "../button";
 import { HeartButton, ShoppingBagCartButton } from "../cartButton";
+import { LinkButtonSolidBlack } from "./LinkButton";
 
 interface NavigationMenuItemProps extends NavigationProps {
   children?: React.ReactElement;
@@ -136,7 +137,7 @@ const BottomFlyMenu = () => {
           </MenuItem>
         </div>
       </div>
-      <ButtonSolidBlack href="#" title="Sign In" />
+      <LinkButtonSolidBlack href="#" title="Sign In" />
       <SocialsMedia />
     </article>
   );
@@ -153,7 +154,7 @@ const FlyMenu = ({
 
   return (
     <aside
-      className={`transition ease-in-out absolute top-0 left-0 duration-500 ${style} bottom-0 bg-white-01 w-[90%] z-50 `}
+      className={`transition ease-in-out fixed top-0 left-0 duration-500 ${style} bottom-0 bg-white-01 w-[90%] z-50 `}
     >
       <section className="flex flex-col justify-between h-full p-6">
         <TopFlyMenu onNav={onNav} />

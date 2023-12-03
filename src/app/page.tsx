@@ -1,12 +1,19 @@
 "use client";
 import SliderSection from "../app/ui/home/sliderSection";
-import { SliderSectionWithContainer } from "./ui/container";
+import {
+  SliderSectionWithContainer,
+  BannerWithContainer,
+} from "./ui/container";
+import Banner from "./ui/home/banner";
 export default function Home() {
   return (
-    <aside>
+    <section>
       <SliderSectionWithContainer>
         <SliderSection />
       </SliderSectionWithContainer>
-    </aside>
+      <BannerWithContainer>
+        <Banner />
+      </BannerWithContainer>
+    </section>
   );
 }
