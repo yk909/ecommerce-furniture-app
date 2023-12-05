@@ -1,13 +1,23 @@
-import tw from "twin.macro";
+import tw, { TwStyle } from "twin.macro";
 
-const formats = {
-  notificacionBar: tw`py-2`,
-  navbar: tw`py-4 lg:px-40`,
+type PaddingFormatProps =
+  | "notificacionBar"
+  | "navbar"
+  | "none"
+  | "sliderSection"
+  | "banner"
+  | "carousel"
+  | "productValue";
+
+const formats: Record<PaddingFormatProps, TwStyle> = {
   none: tw``,
+  banner: tw`px-8 lg:px-40`,
+  navbar: tw`py-4 lg:px-40`,
+  notificacionBar: tw`py-2`,
   sliderSection: tw`px-8 pb-10 lg:px-40`,
-  banner: tw`px-8 lg:px-40`
+  carousel: tw`p-8 lg:px-40 lg:pt-12`,
+  productValue: tw`p-8 lg:px-40 lg:pt-12`
 };
-type PaddingFormatProps = "notificacionBar" | "navbar" | "none" | "sliderSection" | "banner";
 
 const styles = {
   paddingY: ({
@@ -50,7 +60,9 @@ export const SliderSectionWithContainer = ({
 }: {
   children: React.ReactNode;
 }) => {
-  return <WithContainer paddingFormat="sliderSection">{children}</WithContainer>;
+  return (
+    <WithContainer paddingFormat="sliderSection">{children}</WithContainer>
+  );
 };
 
 export const BannerWithContainer = ({
@@ -59,4 +71,20 @@ export const BannerWithContainer = ({
   children: React.ReactNode;
 }) => {
   return <WithContainer paddingFormat="banner">{children}</WithContainer>;
+};
+
+export const CarouselWithContainer = ({
+  children,
+}: {
+  children: React.ReactNode;
+}) => {
+  return <WithContainer paddingFormat="carousel">{children}</WithContainer>;
+};
+
+export const ProductValueWithContainer = ({
+  children,
+}: {
+  children: React.ReactNode;
+}) => {
+  return <WithContainer paddingFormat="productValue">{children}</WithContainer>;
 };

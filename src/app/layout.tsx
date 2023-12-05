@@ -23,7 +23,7 @@ export default function RootLayout({
 
   return (
     <html lang="en">
-      <body className={inter.className + "bg-blue-01"}>
+      <body className={inter.className}>
         <StyledComponentsRegistry>
           <GlobalStyles />
           <aside className="bg-white-02">

@@ -1,13 +1,7 @@
 import Image from "next/image";
 import React from "react";
-import {
-  ButtonBackgroundColor,
-  ButtonImageRightLineDown,
-  ButtonTextColor,
-} from "../button";
 import tw, { TwStyle } from "twin.macro";
-import Link from "next/link";
-import { LinkButtonImageRightLineDown } from "../shared/LinkButton";
+import { LinkButtonImageRightLineDown } from "../../shared/LinkButton";
 
 type FurnitureStoreImage = "furniture-01" | "furniture-02" | "furniture-03";
 
@@ -34,7 +28,7 @@ interface BannerItemProps {
   href: string;
 }
 
-const BannerItem = ({ furniture, title, href }: BannerItemProps) => {
+const BannerGridItem = ({ furniture, title, href }: BannerItemProps) => {
   return (
     <article css={styles.furniture({ furniture })}>
       <div>
@@ -63,14 +57,14 @@ const BannerItem = ({ furniture, title, href }: BannerItemProps) => {
   );
 };
 
-const Banner = () => {
+const BannerGrid = () => {
   return (
     <aside className="grid grid-cols-1 auto-rows-auto gap-y-4 gap-x-6 lg:grid-cols-2 lg:grid-rows-2">
-      <BannerItem title="Living Room" furniture="furniture-01" href="" />
-      <BannerItem title="Bedroom" furniture="furniture-02" href="" />
-      <BannerItem title="Kitchen" furniture="furniture-03" href="" />
+      <BannerGridItem title="Living Room" furniture="furniture-01" href="" />
+      <BannerGridItem title="Bedroom" furniture="furniture-02" href="" />
+      <BannerGridItem title="Kitchen" furniture="furniture-03" href="" />
     </aside>
   );
 };
 
-export default Banner;
+export default BannerGrid;

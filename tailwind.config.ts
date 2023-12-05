@@ -12,7 +12,7 @@ const config: Config = {
         "furniture-01": "url('/images/banner/banner-01.jpeg')",
         "furniture-02": "url('/images/banner/banner-02.jpeg')",
         "furniture-03": "url('/images/banner/banner-03.jpeg')",
-      },
+      }
     },
     colors: {
       black: "#000000",
@@ -30,8 +30,13 @@ const config: Config = {
         "06": "#232627",
         "07": "#141718",
       },
+      green: {
+        "01": "#38CB89"
+      }
     },
   },
-  plugins: [],
+  plugins: [
+    require('tailwind-scrollbar')({ nocompatible: true }),
+  ],
 };
 export default config;

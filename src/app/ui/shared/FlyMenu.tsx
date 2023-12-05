@@ -2,7 +2,6 @@ import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
 import { NavigationProps, navigation } from "./Navigator";
-import { ButtonSolidBlack } from "../button";
 import { HeartButton, ShoppingBagCartButton } from "../cartButton";
 import { LinkButtonSolidBlack } from "./LinkButton";
 
