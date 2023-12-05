@@ -1,0 +1,20 @@
+[
+    {
+        "id": 1,
+        "image": "/images/article/article-01.jpeg",
+        "title": "7 ways to decor your home",
+        "href": "#"
+    },
+    {
+        "id": 2,
+        "image": "/images/article/article-02.jpeg",
+        "title": "Kitchen organization",
+        "href": "#"
+    },
+    {
+        "id": 3,
+        "image": "/images/article/article-03.jpeg",
+        "title": "Decor your bedroom",
+        "href": "#"
+    }   
+]

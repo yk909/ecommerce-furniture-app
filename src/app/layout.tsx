@@ -9,6 +9,7 @@ import {
   NavBarWithContainer,
   NotificationBarWithContainer,
 } from "./ui/container";
+import Footer from "./ui/shared/Footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,7 +18,7 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const maxContainer: string = "max-w-7xl m-auto";
+  const maxContainer: string = "m-auto";
   const navigatorStyle: string = `bg-white-01 ${maxContainer}`;
   const mainStyle: string = `${maxContainer}`;
 
@@ -37,6 +38,7 @@ export default function RootLayout({
             </NavBarWithContainer>
           </nav>
           <main className={mainStyle}>{children}</main>
+          <Footer/>
         </StyledComponentsRegistry>
       </body>
     </html>

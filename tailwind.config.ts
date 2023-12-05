@@ -12,9 +12,11 @@ const config: Config = {
         "furniture-01": "url('/images/banner/banner-01.jpeg')",
         "furniture-02": "url('/images/banner/banner-02.jpeg')",
         "furniture-03": "url('/images/banner/banner-03.jpeg')",
+        "newsletter-banner": "url('/images/newsletter-banner.png')"
       }
     },
     colors: {
+      transparent: 'transparent',
       black: "#000000",
       blue: {
         "01": "#377DFF"

@@ -7,7 +7,8 @@ type PaddingFormatProps =
   | "sliderSection"
   | "banner"
   | "carousel"
-  | "productValue";
+  | "productValue"
+  | "blogSection";
 
 const formats: Record<PaddingFormatProps, TwStyle> = {
   none: tw``,
@@ -16,7 +17,8 @@ const formats: Record<PaddingFormatProps, TwStyle> = {
   notificacionBar: tw`py-2`,
   sliderSection: tw`px-8 pb-10 lg:px-40`,
   carousel: tw`p-8 lg:px-40 lg:pt-12`,
-  productValue: tw`p-8 lg:px-40 lg:pt-12`
+  productValue: tw`p-8 lg:px-40 lg:pt-12`,
+  blogSection: tw`py-10 px-8 lg:py-20 lg:px-40`
 };
 
 const styles = {
@@ -87,4 +89,12 @@ export const ProductValueWithContainer = ({
   children: React.ReactNode;
 }) => {
   return <WithContainer paddingFormat="productValue">{children}</WithContainer>;
+};
+
+export const BlogSectionWithContainer = ({
+  children,
+}: {
+  children: React.ReactNode;
+}) => {
+  return <WithContainer paddingFormat="blogSection">{children}</WithContainer>;
 };
